@@ -2,7 +2,7 @@
   "name": "paigevogenthaler",
   "version": "1.0.0",
   "description": "personal website",
-  "main": "app/index.js",
+  "main": "index.js",
   "scripts": {
     "start": "nodemon server.js"
   },
