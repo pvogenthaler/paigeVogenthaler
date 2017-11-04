@@ -2,10 +2,13 @@
   "name": "paigevogenthaler",
   "version": "1.0.0",
   "description": "personal website",
-  "main": "index.js",
+  "main": "app/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.16.2"
+  }
 }

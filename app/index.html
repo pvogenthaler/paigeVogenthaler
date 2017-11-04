@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width" />
+<style>
+body {
+  margin: 0;
+}
+.parallax {
+  background-image: url("assets/parallax.jpg");
+  min-height: 100vh;
+  background-size: 100vh 100vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  opacity: 0.8;
+}
+@media screen and (max-width: 1050px) and (orientation: portrait) {
+  .parallax {
+    min-height: 100vw;
+    background-size: 100vw 100vw;
+  }
+}
+.test {
+  height: 100vh;
+  background: pink;
+}
+</style>
+
+<body>
+  <div class="parallax"></div>
+  <h1>Hello World</h1>
+  <p>I'm hosted with GitHub Pages.</p>
+  <div class="test"></div>
+</body>
+</html>
