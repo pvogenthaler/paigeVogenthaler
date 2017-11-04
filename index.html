@@ -13,7 +13,7 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position-x: center;
-  opacity: 0.8;
+  opacity: 0.75;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,4 +46,32 @@ body {
   </div>
   <div class="test"></div>
 </body>
+
+<script>
+let wait = false;
+const throttle = function(cb, delay) {
+  if (wait) {
+    return;
+  }; 
+  wait = true;
+  cb();
+  setTimeout(() => {
+    wait = false;
+  }, delay);
+}
+
+const parallax = function() {
+  throttle(() => {
+    const parallaxEl = document.querySelector('.parallax');
+    const x = document.scrollingElement.scrollTop
+
+    parallaxEl.style['background-position-y'] = parseInt(-x / 4) + 'px';
+  }, 25);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  window.addEventListener('scroll', parallax);
+  
+});
+</script>
 </html>
