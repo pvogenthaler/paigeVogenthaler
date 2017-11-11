@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@webcomponents/webcomponentsjs": "github:webcomponents/webcomponentsjs",
     "express": "4.16.2"
   }
 }

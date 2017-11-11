@@ -6,7 +6,7 @@ body {
   margin: 0;
   font: 400 15px/1.8 "Lato", sans-serif;
 }
-.parallax {
+parallax-img {
   background-image: url("assets/parallax.jpg");
   min-height: 100vh;
   background-size: 100vh 100vh;
@@ -18,7 +18,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-.parallax span {
+parallax-img span {
   padding: 10px;
   background-color: black;
   color: pink;
@@ -29,7 +29,7 @@ body {
 
 }
 @media screen and (max-width: 1050px) and (orientation: portrait) {
-  .parallax {
+  parallax-img {
     min-height: 100vw;
     background-size: 100vw 100vw;
   }
@@ -41,37 +41,111 @@ body {
 </style>
 
 <body>
-  <div class="parallax">
-    <span>Paige Vogenthaler</span>
-  </div>
+  <div class="parallax"></div>
   <div class="test"></div>
+  <div class="experienceList"></div>
 </body>
 
 <script>
-let wait = false;
-const throttle = function(cb, delay) {
-  if (wait) {
-    return;
-  }; 
-  wait = true;
-  cb();
-  setTimeout(() => {
-    wait = false;
-  }, delay);
+'use strict';
+
+/* --- utils --- */
+
+function $(selector) {
+  return document.querySelector(selector);
 }
 
-const parallax = function() {
-  throttle(() => {
-    const parallaxEl = document.querySelector('.parallax');
-    const x = document.scrollingElement.scrollTop
 
-    parallaxEl.style['background-position-y'] = parseInt(-x / 4) + 'px';
-  }, 25);
+/* --- parallax web component --- */
+
+class ParallaxImg extends HTMLElement {
+  constructor() {
+    super();
+
+    this.state = {
+      wait: false
+    }
+    this.throttle = this.throttle.bind(this);
+    this.parallax = this.parallax.bind(this);
+  }
+
+  throttle(cb, delay) {
+    if (this.state.wait) {
+      return;
+    };
+    this.state.wait = true;
+    cb();
+    setTimeout(() => {
+      this.state.wait = false;
+    }, delay);
+  }
+
+  parallax() {
+    this.throttle(() => {
+      const x = document.scrollingElement.scrollTop
+
+      this.style['background-position-y'] = parseInt(-x / 4) + 'px';
+    }, 25);
+  }
+
+  connectedCallback() {
+    const nameEl = document.createElement('span');
+    nameEl.innerHTML = 'Paige Vogenthaler';
+
+    this.append(nameEl);
+    window.addEventListener('scroll', this.parallax);
+  }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  window.addEventListener('scroll', parallax);
-  
-});
+customElements.define('parallax-img', ParallaxImg);
+document.body.replaceChild(new ParallaxImg, $('.parallax'));
+
+
+/* --- experience list web component --- */
+
+class ExperienceItem extends HTMLElement {
+  constructor(itemData) {
+    super();
+    this.state = {
+      data: itemData
+    }
+  }
+
+  connectedCallback() {
+    this.innerHTML = `${this.state.data.company} - ${this.state.data.jobTitle}`;
+  }
+}
+
+customElements.define('experience-item', ExperienceItem);
+
+class ExperienceList extends HTMLElement {
+  constructor() {
+    super();
+    this.state = {
+      experienceData: [
+        {
+          company: 'Vivid Seats',
+          jobTitle: 'Software Engineer',
+          jobDescription: 'I developed things'
+        },
+        {
+          company: 'Oracle',
+          jobTitle: 'Business Development Consultant',
+          jobDescription: 'I sold things'
+        }
+      ]
+    }
+  }
+
+  connectedCallback() {
+    this.state.experienceData.forEach((itemData) => {
+      this.append(new ExperienceItem(itemData));
+    });
+  }
+}
+
+customElements.define('experience-list', ExperienceList);
+document.body.replaceChild(new ExperienceList, $('.experienceList'));
+
 </script>
 </html>
