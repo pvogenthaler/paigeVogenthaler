@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+}
+.parallax-img {
+  background-image: url("assets/parallax.jpg");
+  min-height: 100vh;
+  background-size: 100vh 100vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  opacity: 0.75;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.parallax-img span {
+  padding: 10px;
+  background-color: black;
+  opacity: 0.85;
+  color: pink;
+  font-size: 25px;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  text-align: center;
+
+}
+@media screen and (max-width: 1050px) and (orientation: portrait) {
+  .parallax-img {
+    min-height: 100vw;
+    background-size: 100vw 100vw;
+  }
+}
+.experience-list {
+  display: flex;
+  flex-direction: column;
+}
+.experience-item {
+  list-style: none;
+  width; 50%;
+  justify-content: center;
+}
+.next {
+  height: 100vh;
+}
