@@ -1,20 +1,73 @@
+body, html {
+    overflow: hidden;
+  }
 body {
   margin: 0;
   font: 400 15px/1.8 "Lato", sans-serif;
+}
+* {
+    margin:0;
+    padding:0;
+  }
+
+/* parallax component styles */
+.parallax-container {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: 300px;
+  perspective: 300px;
+}
+.parallax-group {
+  position: relative;
+  height: 100vh;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+.parallax-layer-fore {
+  -webkit-transform: translateZ(90px) scale(.7); /* scale = 1 + (translateZ * -1) / perspective */
+  transform: translateZ(90px) scale(.7);
+  z-index: 1;
+}
+.parallax-layer-base {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.parallax-layer-back {
+  -webkit-transform: translateZ(-300px) scale(2);
+  transform: translateZ(-300px) scale(2);
+  z-index: -1;
+}
+.parallax-layer-deep {
+  -webkit-transform: translateZ(-600px) scale(3);
+  transform: translateZ(-600px) scale(3);
+  z-index: -2;
+}
+
+/* img parallax group */
+.parallax-group-img {
+
 }
 .parallax-img {
   background-image: url("assets/parallax.jpg");
   min-height: 100vh;
   background-size: 100vh 100vh;
-  background-attachment: fixed;
   background-repeat: no-repeat;
   background-position-x: center;
   opacity: 0.75;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
-.parallax-img span {
+.parallax-group-img span {
   padding: 10px;
   background-color: black;
   opacity: 0.85;
@@ -23,7 +76,13 @@ body {
   text-transform: uppercase;
   letter-spacing: 10px;
   text-align: center;
-
+  align-self: center;
+}
+.parallax-group-img .name {
+  justify-content: center;
+}
+.parallax-group-img .title {
+  justify-content: flex-end;
 }
 @media screen and (max-width: 1050px) and (orientation: portrait) {
   .parallax-img {
@@ -31,6 +90,8 @@ body {
     background-size: 100vw 100vw;
   }
 }
+
+/* experience list parallax group */
 .experience-list {
   display: flex;
   flex-direction: column;
