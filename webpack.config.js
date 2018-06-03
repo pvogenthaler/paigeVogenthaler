@@ -24,7 +24,7 @@ const config = {
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'public')
+    contentBase: BUILD_DIR
   }
 };
 
