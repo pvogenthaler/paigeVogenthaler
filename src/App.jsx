@@ -1,14 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ParallaxImg from './ParallaxImg';
-import ExperienceList from './ExperienceList';
+import ParallaxContainer from './ParallaxContainer';
 
 const App = () => (
-  <div>
-    <ParallaxImg />
-    <ExperienceList />
-    <div class="next"></div>
-  </div>
+  <React.Fragment>
+    <ParallaxContainer />
+  </React.Fragment>
 );
 
 ReactDOM.render(<App />, document.getElementById('root'));

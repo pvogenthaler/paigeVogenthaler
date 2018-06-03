@@ -22,10 +22,10 @@ class ExperienceList extends React.Component {
 
   render() {
     return (
-      <ul class="experience-list">
+      <ul className="experience-list">
         {
-          this.state.experienceData.map((itemData) => (
-            <ExperienceItem { ...{ itemData } } />
+          this.state.experienceData.map((itemData, i) => (
+            <ExperienceItem { ...{ itemData, key: i } } />
           ))
         }
       </ul>
