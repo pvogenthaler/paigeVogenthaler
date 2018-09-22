@@ -1,0 +1,10 @@
+.experience-list {
+  display: flex;
+  flex-direction: column;
+
+  .experience-item {
+    list-style: none;
+    justify-content: center;
+    margin: 1rem;
+  }
+}
