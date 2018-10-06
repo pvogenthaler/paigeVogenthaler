@@ -5,6 +5,7 @@
   "private": true,
   "author": "Paige Vogenthaler",
   "license": "ISC",
+  "homepage": "https://pvogenthaler.github.io/",
   "babel": {
     "presets": [
       "env",
@@ -33,8 +34,10 @@
     "webpack-dev-server": "^3.1.4"
   },
   "scripts": {
-    "build": "webpack --config ./src/build/webpack.config.js --mode development",
-    "deploy": "webpack-dev-server --config ./src/build/webpack.config.js --mode development",
-    "start": "webpack-dev-server --config ./src/build/webpack.config.js --mode development --watch --open"
+    "build:dev": "webpack --config ./src/build/webpack.config.js --mode development",
+    "deploy:dev": "webpack-dev-server --config ./src/build/webpack.config.js --mode development",
+    "start": "webpack-dev-server --config ./src/build/webpack.config.js --mode development --watch --open",
+    "predeploy": "webpack --config ./src/build/webpack.config.js --mode production",
+    "deploy": "npm run predeploy && git subtree push --prefix public origin master"
   }
 }

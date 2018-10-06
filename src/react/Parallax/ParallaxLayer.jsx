@@ -9,7 +9,7 @@ const ParallaxLayer = ({ children, layerPosition, name = '' }) => (
 );
 
 ParallaxLayer.propTypes = {
-  layerPosition: PropTypes.oneOf([0, 1, 2, 3]).isRequired,
+  layerPosition: PropTypes.oneOf([-1, 0, 1, 2, 3]).isRequired,
   name: PropTypes.string
 }
 

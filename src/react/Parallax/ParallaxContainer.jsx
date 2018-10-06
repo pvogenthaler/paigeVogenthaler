@@ -27,8 +27,8 @@ const ParallaxContainer = () => (
     { /* group 2 */ }
     <ParallaxGroup name="2">
       <ParallaxLayer { ...{ layerPosition: 0 } } />
-      <ParallaxLayer { ...{ layerPosition: 1, name: 'experience' } }>
-        <ExperienceList />
+      <ParallaxLayer { ...{ layerPosition: 1, name: 'about' } }>
+        <span className="about">About Me</span>
       </ParallaxLayer>
     </ParallaxGroup>
 
@@ -38,30 +38,41 @@ const ParallaxContainer = () => (
       <ParallaxLayer { ...{ layerPosition: -1, name: 'img' } }>
         <ParallaxImg src="/assets/denver.jpg" />
       </ParallaxLayer>
-      <ParallaxLayer { ...{ layerPosition: 1, name: 'experience' } } >
-      </ParallaxLayer>
     </ParallaxGroup>
 
     { /* group 4 */ }
     <ParallaxGroup name="4">
       <ParallaxLayer { ...{ layerPosition: 0 } } />
-      <ParallaxLayer { ...{ layerPosition: 1, name: 'more' } }>
-        <div>
-          MORE SHIT HERE
-        </div>
+      <ParallaxLayer { ...{ layerPosition: 1, name: 'experience' } }>
+        <ExperienceList />
       </ParallaxLayer>
     </ParallaxGroup>
 
     { /* group 5 */ }
     <ParallaxGroup name="5">
-      <ParallaxLayer { ...{ layerPosition: 0, name: 'social' } } >
-        <a href="https://www.linkedin.com/in/pvogenthaler" className="social-icon fa fa-linkedin-square"></a>
-        <a href="https://www.instagram.com/paigevogie" className="social-icon fa fa-instagram"></a>
-        <a href="https://www.github.com/pvogenthaler" className="social-icon fa fa-github"></a>
-        <a href="https://jsfiddle.net/user/pvogenthaler/" className="social-icon fa fa-jsfiddle"></a>
-      </ParallaxLayer>
       <ParallaxLayer { ...{ layerPosition: -1, name: 'img' } }>
         <ParallaxImg src="/assets/howie.jpg" />
+      </ParallaxLayer>
+    </ParallaxGroup>
+
+    { /* group 6 */ }
+    <ParallaxGroup name="6">
+      <ParallaxLayer { ...{ layerPosition: 0, name: 'social' } } >
+        <span className="contact">Contact</span>
+        <ul>
+          <li>
+            <a href="https://www.linkedin.com/in/pvogenthaler" className="social-icon fa fa-linkedin-square"></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/paigevogie" className="social-icon fa fa-instagram"></a>
+          </li>
+          <li>
+            <a href="https://www.github.com/pvogenthaler" className="social-icon fa fa-github"></a>
+          </li>
+          <li>
+            <a href="https://jsfiddle.net/user/pvogenthaler/" className="social-icon fa fa-jsfiddle"></a>
+          </li>
+        </ul>
       </ParallaxLayer>
     </ParallaxGroup>
   </div>

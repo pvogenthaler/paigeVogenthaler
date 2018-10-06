@@ -1,7 +1,30 @@
+/* colors */
+
+$white: white;
+$lightGrey: lightgrey;
+$dimGrey: dimgrey;
 $lightYellow: #f6f1dd;
+
+/* mixins */
 
 @mixin portrait {
   @media (orientation: portrait) {
-    @content
+    @content;
   }
+}
+
+@mixin firefox {
+  @-moz-document url-prefix() {
+    @content;
+  }
+}
+
+@mixin largeFont($color) {
+  opacity: 0.85;
+  color: $color;
+  font-size: 56px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  text-align: center;
 }
