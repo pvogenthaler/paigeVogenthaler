@@ -32,7 +32,7 @@ const config = {
   output: {
     path: BUILD_DIR,
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: process.env.NODE_ENV === 'development' ? 'bundle.js' : 'app.js'
   },
   devServer: {
     contentBase: BUILD_DIR
