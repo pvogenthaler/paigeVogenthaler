@@ -17,7 +17,7 @@ const ParallaxContainer = () => (
     <ParallaxGroup name="1">
       <ParallaxLayer { ...{ layerPosition: 0 } } />
       <ParallaxLayer { ...{ layerPosition: -1, name: 'img' } }>
-        <ParallaxImg src="/assets/lake-michigan.jpg" />
+        <ParallaxImg src=" https://s3-us-west-1.amazonaws.com/pvogenthaler.github.io/assets/lake-michigan.jpg" />
       </ParallaxLayer>
       <ParallaxLayer { ...{ layerPosition: 2, name: 'name' } } >
         <span className="name">Paige Vogenthaler</span>
@@ -36,7 +36,7 @@ const ParallaxContainer = () => (
     <ParallaxGroup name="3">
       <ParallaxLayer { ...{ layerPosition: 0 } } />
       <ParallaxLayer { ...{ layerPosition: -1, name: 'img' } }>
-        <ParallaxImg src="/assets/denver.jpg" />
+        <ParallaxImg src=" https://s3-us-west-1.amazonaws.com/pvogenthaler.github.io/assets/denver.jpg" />
       </ParallaxLayer>
     </ParallaxGroup>
 
@@ -51,7 +51,7 @@ const ParallaxContainer = () => (
     { /* group 5 */ }
     <ParallaxGroup name="5">
       <ParallaxLayer { ...{ layerPosition: -1, name: 'img' } }>
-        <ParallaxImg src="/assets/howie.jpg" />
+        <ParallaxImg src=" https://s3-us-west-1.amazonaws.com/pvogenthaler.github.io/assets/howie.jpg" />
       </ParallaxLayer>
     </ParallaxGroup>
 

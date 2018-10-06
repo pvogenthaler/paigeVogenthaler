@@ -5,7 +5,7 @@ const BUILD_DIR = path.resolve(__dirname, '../../public');
 const APP_DIR = path.resolve(__dirname, '../react');
 
 const config = {
-  entry: APP_DIR + '/App.jsx',
+  entry: APP_DIR + '/entry.js',
   module: {
     rules: [
       {
@@ -20,6 +20,12 @@ const config = {
       }
     ]
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      TEST: 'test',
+      NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+    })
+  ],
   resolve: {
     extensions: ['*', '.js', '.jsx', '.scss']
   },

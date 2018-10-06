@@ -25,6 +25,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
     "node-sass": "^4.9.3",
     "sass-loader": "^7.1.0",
@@ -34,10 +35,10 @@
     "webpack-dev-server": "^3.1.4"
   },
   "scripts": {
-    "build:dev": "webpack --config ./src/build/webpack.config.js --mode development",
-    "deploy:dev": "webpack-dev-server --config ./src/build/webpack.config.js --mode development",
-    "start": "webpack-dev-server --config ./src/build/webpack.config.js --mode development --watch --open",
-    "predeploy": "webpack --config ./src/build/webpack.config.js --mode production",
-    "deploy": "npm run predeploy && git subtree push --prefix public origin master"
+    "build:dev": "cross-env NODE_ENV=development webpack --config ./src/build/webpack.config.js --mode development",
+    "deploy:dev": "cross-env NODE_ENV=development webpack-dev-server --config ./src/build/webpack.config.js --mode development",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --config ./src/build/webpack.config.js --mode development --watch --open",
+    "build:prod": "cross-env NODE_ENV=production webpack --config ./src/build/webpack.config.js --mode production",
+    "deploy": "npm run build:prod && git subtree push --prefix public origin master"
   }
 }
