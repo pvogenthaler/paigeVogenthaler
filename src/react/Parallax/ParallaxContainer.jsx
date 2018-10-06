@@ -17,19 +17,18 @@ const ParallaxContainer = () => (
     <ParallaxGroup name="1">
       <ParallaxLayer { ...{ layerPosition: 0 } } />
       <ParallaxLayer { ...{ layerPosition: -1, name: 'img' } }>
-        <ParallaxImg src="/assets/willis-tower.jpg" />
+        <ParallaxImg src="/assets/lake-michigan.jpg" />
       </ParallaxLayer>
-      <ParallaxLayer { ...{ layerPosition: 1, name: 'name' } } >
+      <ParallaxLayer { ...{ layerPosition: 2, name: 'name' } } >
         <span className="name">Paige Vogenthaler</span>
       </ParallaxLayer>
     </ParallaxGroup>
 
     { /* group 2 */ }
     <ParallaxGroup name="2">
-      <ParallaxLayer { ...{ layerPosition: 1, name: 'about' } }>
-        <div>
-          SHIT ABOUT ME
-        </div>
+      <ParallaxLayer { ...{ layerPosition: 0 } } />
+      <ParallaxLayer { ...{ layerPosition: 1, name: 'experience' } }>
+        <ExperienceList />
       </ParallaxLayer>
     </ParallaxGroup>
 
@@ -37,15 +36,15 @@ const ParallaxContainer = () => (
     <ParallaxGroup name="3">
       <ParallaxLayer { ...{ layerPosition: 0 } } />
       <ParallaxLayer { ...{ layerPosition: -1, name: 'img' } }>
-        <ParallaxImg src="/assets/willis-tower.jpg" />
+        <ParallaxImg src="/assets/denver.jpg" />
       </ParallaxLayer>
       <ParallaxLayer { ...{ layerPosition: 1, name: 'experience' } } >
-        <ExperienceList />
       </ParallaxLayer>
     </ParallaxGroup>
 
     { /* group 4 */ }
     <ParallaxGroup name="4">
+      <ParallaxLayer { ...{ layerPosition: 0 } } />
       <ParallaxLayer { ...{ layerPosition: 1, name: 'more' } }>
         <div>
           MORE SHIT HERE
@@ -55,18 +54,14 @@ const ParallaxContainer = () => (
 
     { /* group 5 */ }
     <ParallaxGroup name="5">
-      <ParallaxLayer { ...{ layerPosition: 0 } } />
-      <ParallaxLayer { ...{ layerPosition: -1, name: 'img' } }>
-        <ParallaxImg src="/assets/willis-tower.jpg" />
+      <ParallaxLayer { ...{ layerPosition: 0, name: 'social' } } >
+        <a href="https://www.linkedin.com/in/pvogenthaler" className="social-icon fa fa-linkedin-square"></a>
+        <a href="https://www.instagram.com/paigevogie" className="social-icon fa fa-instagram"></a>
+        <a href="https://www.github.com/pvogenthaler" className="social-icon fa fa-github"></a>
+        <a href="https://jsfiddle.net/user/pvogenthaler/" className="social-icon fa fa-jsfiddle"></a>
       </ParallaxLayer>
-    </ParallaxGroup>
-
-    { /* group 6 */ }
-    <ParallaxGroup name="6">
-      <ParallaxLayer { ...{ layerPosition: 1, name: 'more' } }>
-        <div>
-          CONCLUSION
-        </div>
+      <ParallaxLayer { ...{ layerPosition: -1, name: 'img' } }>
+        <ParallaxImg src="/assets/howie.jpg" />
       </ParallaxLayer>
     </ParallaxGroup>
   </div>

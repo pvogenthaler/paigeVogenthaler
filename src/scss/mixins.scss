@@ -1,5 +1,5 @@
+$lightYellow: #f6f1dd;
 
-/* up to and including iphone x */
 @mixin portrait {
   @media (orientation: portrait) {
     @content

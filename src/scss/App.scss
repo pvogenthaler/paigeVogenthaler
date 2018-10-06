@@ -5,9 +5,14 @@
 
 html {
   overflow: hidden;
+
   body {
     overflow: hidden;
     margin: 0;
     font: 400 15px/1.8 "Lato", sans-serif;
   }
+}
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* optional: just make scrollbar invisible */
 }
