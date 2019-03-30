@@ -1,11 +1,11 @@
 const webpack = require('webpack');
 const path = require('path');
 
-const BUILD_DIR = path.resolve(__dirname, '../../public');
-const APP_DIR = path.resolve(__dirname, '../react');
+const PUBLIC_DIR = path.resolve(__dirname, '../../public');
+const SRC_DIR = path.resolve(__dirname, '../');
 
 const config = {
-  entry: APP_DIR + '/entry.js',
+  entry: SRC_DIR + '/entry.js',
   module: {
     rules: [
       {
@@ -22,7 +22,6 @@ const config = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      TEST: 'test',
       NODE_ENV: JSON.stringify(process.env.NODE_ENV)
     })
   ],
@@ -30,12 +29,12 @@ const config = {
     extensions: ['*', '.js', '.jsx', '.scss']
   },
   output: {
-    path: BUILD_DIR,
+    path: PUBLIC_DIR,
     publicPath: '/',
-    filename: process.env.NODE_ENV === 'development' ? 'bundle.js' : 'app.js'
+    filename: 'bundle.js'
   },
   devServer: {
-    contentBase: BUILD_DIR
+    contentBase: PUBLIC_DIR
   }
 };
 
