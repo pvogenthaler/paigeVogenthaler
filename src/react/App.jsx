@@ -1,43 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '../scss/App';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-import Menu from './Menu';
 import About from './About';
 import Blog from './Blog';
 import Contact from './Contact';
 import Home from './Home';
 
-class App extends React.Component {
-    state = { hash: window.location.hash };
 
-    componentDidMount() {
-        window.addEventListener('hashchange', () => {
-            this.setState({ hash: window.location.hash });
-        });
-    }
 
-    render() {
-        const { hash } = this.state;
+const App = () => (
+  <Router>
+    <nav className="menu">
+        <Link to='/'>Home</Link>
+        <Link to='/about'>About</Link>
+        <Link to='/blog'>Blog</Link>
+        <Link to='/contact'>Contact</Link>
+    </nav>
 
-        return (
-            <React.Fragment>
-                <Menu />
-                <div className="main">
-                    {
-                        (() => {
-                            switch(hash) {
-                                case '#about': return <About />
-                                case '#blog': return <Blog />
-                                case '#contact': return <Contact />
-                                default: return <Home />
-                            }
-                        })()
-                    }
-                </div>
-            </React.Fragment>
-        );
-    }
-};
+    <Route path='/' exact component={Home}/>
+    <Route path='/about' component={About}/>
+    <Route path='/blog' component={Blog}/>
+    <Route path='/contact' component={Contact}/>
+  </Router>
+);
 
 ReactDOM.render(<App />, document.getElementById('root'));
