@@ -1,0 +1,60 @@
+@import "~mathsass/dist/_math.scss";
+
+$ringCount:10;
+$size:0.25em;
+$speed:8s;
+$degStart:360deg;
+$degEnd:0deg;
+
+.ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+
+  @for $i from 1 to $ringCount+1 {
+    $dotCount: $i*3;
+    $dotsList: ();
+
+    @for $j from 0 to $dotCount {
+      $x: $j*$degStart/$dotCount;
+      $dotsList: $dotsList, $i*cos($x)*1em $i*sin($x)*1em;
+    }
+
+    &:nth-child(#{$i}) {
+      box-shadow: $dotsList;
+      animation: rot $i*$speed linear infinite;
+    }
+  }
+}
+
+@-webkit-keyframes rot /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate($degEnd);
+    -o-transform: rotate($degEnd);
+    transform: rotate($degEnd);
+  }
+  to {
+    -webkit-transform: rotate($degStart);
+    -o-transform: rotate($degStart);
+    transform: rotate($degStart);
+  }
+}
+@keyframes rot {
+  from {
+    -ms-transform: rotate($degEnd);
+    -moz-transform: rotate($degEnd);
+    -webkit-transform: rotate($degEnd);
+    -o-transform: rotate($degEnd);
+    transform: rotate($degEnd);
+  }
+  to {
+    -ms-transform: rotate($degStart);
+    -moz-transform: rotate($degStart);
+    -webkit-transform: rotate($degStart);
+    -o-transform: rotate($degStart);
+    transform: rotate($degStart);
+  }
+}
