@@ -1,7 +1,9 @@
 import React from 'react';
 
 const Blog = () => (
-    <div>Blog</div>
+    <div className="blog">
+      Stay Tuned.
+    </div>
 );
 
 export default Blog;

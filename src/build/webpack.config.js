@@ -1,3 +1,5 @@
+// TODO: separate into webpack.entry.js (include in html) and webpack.config.js (upload to s3)
+
 const webpack = require('webpack');
 const path = require('path');
 
@@ -34,7 +36,8 @@ const config = {
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: PUBLIC_DIR
+    contentBase: PUBLIC_DIR,
+    historyApiFallback: true
   }
 };
 
