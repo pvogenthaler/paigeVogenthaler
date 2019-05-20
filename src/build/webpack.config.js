@@ -2,9 +2,10 @@ const webpack = require('webpack');
 const path = require('path');
 
 const PUBLIC_DIR = path.resolve(__dirname, '../../public');
+const SRC_DIR = path.resolve(__dirname, '../../src');
 
 const config = {
-  entry: PUBLIC_DIR + '/entry.js',
+  entry: SRC_DIR + '/entry.js',
   module: {
     rules: [
       {
