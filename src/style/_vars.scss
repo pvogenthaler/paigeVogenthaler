@@ -1,0 +1,104 @@
+$z-indexes: (
+    "outdated-browser",
+    "modal",
+    "site-header",
+    "page-wrapper",
+    "site-footer"
+);
+
+@function z($name) {
+    @if index($z-indexes, $name) {
+        @return (length($z-indexes) - index($z-indexes, $name)) + 1;
+    } @else {
+        @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+        @return null;
+    }
+}
+
+
+@mixin flex-direction($a) {
+  -moz-flex-direction: $a;
+  -ms-flex-direction: $a;
+  -webkit-flex-direction: $a;
+  flex-direction: $a;
+}
+@mixin flex-wrap($a) {
+  -moz-flex-wrap: $a;
+  -ms-flex-wrap: $a;
+  -webkit-flex-wrap: $a;
+  flex-wrap: $a;
+}
+@mixin align-content($a) {
+  align-content: $a;
+}
+@mixin align-items($a) {
+  -moz-align-items: $a;
+  -webkit-align-items: $a;
+  align-items: $a;
+}
+@mixin align-self($a) {
+  -moz-align-self: $a;
+  -webkit-align-self: $a;
+  align-self: $a;
+}
+@mixin justify-content($a) {
+  -moz-box-pack: $a;
+  -ms-box-pack: $a;
+  -webkit-box-pack: $a;
+  box-pack: $a;
+  -moz-justify-content: $a;
+  -ms-justify-content: $a;
+  -webkit-justify-content: $a;
+  justify-content: $a;
+}
+@mixin justify-self($a) {
+  -moz-justify-self: $a;
+  -ms-justify-self: $a;
+  -webkit-justify-self: $a;
+  justify-self: $a;
+}
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -ms-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+@mixin placeholder-text {
+  $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
+  @each $placeholder in $placeholders {
+    &:#{$placeholder}-placeholder {
+      @content;
+    }
+  }
+}
+@mixin transition($p, $a) {
+  -webkit-transition: $p $a ease-in;
+  -moz-transition: $p $a ease-in;
+  -ms-transition: $p $a ease-in;
+  transition: $p $a ease-in;
+}
+@mixin rotate($deg) {
+  -webkit-transform: rotate($deg);
+  -moz-transform: rotate($deg);
+  -ms-transform: rotate($deg);
+  transform: rotate($deg);
+}
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+@mixin hardware($backface: true, $perspective: 1000) {
+    @if $backface {
+        backface-visibility: hidden;
+    }
+    perspective: $perspective;
+}
+@mixin truncate($truncation-boundary) {
+    max-width: $truncation-boundary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -1,3 +1,6 @@
+@import './_vars.scss';
+@import './Home.scss';
+
 $largeFont:22px;
 
 html, body {
@@ -35,7 +38,6 @@ html, body {
 
     .main {
         width: 60%;
-        
-        @import './Home.scss';
+        @include Home;
     }
 }

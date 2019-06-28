@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '../scss/App';
+import '../style/App';
 import { Router, Route, Link, browserHistory } from 'react-router-dom';
 
 import About from './About';
