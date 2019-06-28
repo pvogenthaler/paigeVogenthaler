@@ -1,5 +1,8 @@
-@import './_vars.scss';
-@import './Home.scss';
+@import './_vars';
+@import './Home';
+@import './About';
+@import './Blog';
+@import './Contact';
 
 $largeFont:22px;
 
@@ -10,6 +13,7 @@ html, body {
 }
 
 #root {
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,6 +42,11 @@ html, body {
 
     .main {
         width: 60%;
+        height: 100%;
+
         @include Home;
+        @include About;
+        @include Blog;
+        @include Contact;
     }
 }
