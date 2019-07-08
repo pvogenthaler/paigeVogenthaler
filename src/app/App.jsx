@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '../style/App';
-import { Router, Route, Link, browserHistory } from 'react-router-dom';
+import { BrowserRouter, Route, NavLink, browserHistory } from 'react-router-dom';
 
 import About from './About';
 import Blog from './Blog';
@@ -11,20 +11,20 @@ import Home from './Home';
 const createHistory = require('history').createBrowserHistory;
 
 const App = () => (
-  <Router history={createHistory()}>
-    <nav className="menu">
-        <Link to='/'>Home</Link>
-        <Link to='/about'>About</Link>
-        <Link to='/blog'>Blog</Link>
-        <Link to='/contact'>Contact</Link>
+  <BrowserRouter history={createHistory()}>
+    <nav className='menu'>
+        <NavLink to='/' exact activeClassName='active'>Home</NavLink>
+        <NavLink to='/about' activeClassName='active'>About</NavLink>
+        <NavLink to='/blog' activeClassName='active'>Blog</NavLink>
+        <NavLink to='/contact' activeClassName='active'>Contact</NavLink>
     </nav>
-    <div className="main">
+    <div className='main'>
       <Route path='/' exact component={Home}/>
       <Route path='/about' component={About}/>
       <Route path='/blog' component={Blog}/>
       <Route path='/contact' component={Contact}/>
     </div>
-  </Router>
+</BrowserRouter>
 );
 
 ReactDOM.render(<App />, document.getElementById('root'));

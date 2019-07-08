@@ -34,7 +34,7 @@ html, body {
             border-radius: 1px;
             white-space: nowrap;
 
-            &:hover {
+            &:hover, &.active {
                 border-color: black;
             }
         }
