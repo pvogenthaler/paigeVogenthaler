@@ -1,13 +1,11 @@
-// TODO: separate into webpack.entry.js (include in html) and webpack.config.js (upload to s3)
-
 const webpack = require('webpack');
 const path = require('path');
 
-const PUBLIC_DIR = path.resolve(__dirname, '../../public');
-const SRC_DIR = path.resolve(__dirname, '../../src');
+const PUBLIC_DIR = path.resolve(__dirname, '../public');
+const SRC_DIR = path.resolve(__dirname, '../src');
 
 const config = {
-  entry: SRC_DIR + '/entry.js',
+  entry: SRC_DIR + '/app/App.jsx',
   module: {
     rules: [
       {
@@ -22,11 +20,6 @@ const config = {
       }
     ]
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      NODE_ENV: JSON.stringify(process.env.NODE_ENV)
-    })
-  ],
   resolve: {
     extensions: ['*', '.js', '.jsx', '.scss']
   },
