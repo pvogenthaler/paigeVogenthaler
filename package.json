@@ -5,7 +5,7 @@
   "private": true,
   "author": "Paige Vogenthaler",
   "license": "ISC",
-  "homepage": "https://pvogenthaler.github.io/",
+  "homepage": "https://paigevogenthaler.com",
   "babel": {
     "presets": [
       "env",
@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "compass-mixins": "^0.12.10",
-    "history": "^4.9.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-router-dom": "^5.0.0"
@@ -38,9 +37,9 @@
     "webpack-dev-server": "^3.7.2"
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --config ./build/webpack.config.js --mode production",
-    "deploy": "npm run build && git subtree push --prefix public origin master",
-    "force-deploy": "npm run build && git push origin `git subtree split --prefix public origin $(git rev-parse --symbolic-full-name --abbrev-ref HEAD)`:master --force",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.config.js --mode development --watch --open"
+    "build": "cross-env webpack --config ./build/webpack.config.js --mode production",
+    "deploy": "git subtree push --prefix public origin master",
+    "force-deploy": "git push origin `git subtree split --prefix public origin $(git rev-parse --symbolic-full-name --abbrev-ref HEAD)`:master --force",
+    "start": "cross-env webpack-dev-server --config ./build/webpack.config.js --mode development --watch --open"
   }
 }

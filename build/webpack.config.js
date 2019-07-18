@@ -20,6 +20,7 @@ const config = {
       }
     ]
   },
+  devtool: 'source-map',
   resolve: {
     extensions: ['*', '.js', '.jsx', '.scss']
   },
@@ -31,7 +32,7 @@ const config = {
   devServer: {
     contentBase: PUBLIC_DIR,
     historyApiFallback: true
-  }
+},
 };
 
 module.exports = config;
