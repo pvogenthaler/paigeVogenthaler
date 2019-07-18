@@ -5,7 +5,7 @@
   "private": true,
   "author": "Paige Vogenthaler",
   "license": "ISC",
-  "homepage": "https://pvogenthaler.github.io/",
+  "homepage": "https://paigevogenthaler.com",
   "babel": {
     "presets": [
       "env",
@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "compass-mixins": "^0.12.10",
-    "history": "^4.9.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-router-dom": "^5.0.0"

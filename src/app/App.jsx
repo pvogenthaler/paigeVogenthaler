@@ -1,17 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '../style/App';
-import { BrowserRouter, Route, NavLink, browserHistory } from 'react-router-dom';
+import { BrowserRouter, Route, NavLink } from 'react-router-dom';
 
 import About from './About';
 import Blog from './Blog';
 import Contact from './Contact';
 import Home from './Home';
 
-const createHistory = require('history').createBrowserHistory;
-
 const App = () => (
-  <BrowserRouter history={createHistory()}>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
     <nav className='menu'>
         <NavLink to='/' exact activeClassName='active'>Home</NavLink>
         <NavLink to='/about' activeClassName='active'>About</NavLink>
