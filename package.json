@@ -1,45 +1,67 @@
 {
-  "name": "paigevogenthaler",
-  "version": "0.1.0",
-  "description": "personal website",
-  "private": true,
-  "author": "Paige Vogenthaler",
-  "license": "ISC",
-  "homepage": "https://paigevogenthaler.com",
-  "babel": {
-    "presets": [
-      "env",
-      "react",
-      "stage-2"
-    ]
-  },
-  "dependencies": {
-    "compass-mixins": "^0.12.10",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-router-dom": "^5.0.0"
-  },
-  "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
-    "cross-env": "^5.2.0",
-    "css-loader": "^1.0.0",
-    "mathsass": "^0.10.1",
-    "node-sass": "^4.9.3",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.0",
-    "webpack": "4.19.1",
-    "webpack-cli": "2.1.4",
-    "webpack-dev-server": "^3.7.2"
-  },
-  "scripts": {
-    "build": "cross-env webpack --config ./build/webpack.config.js --mode production",
-    "deploy": "git subtree push --prefix public origin master",
-    "force-deploy": "git push origin `git subtree split --prefix public origin $(git rev-parse --symbolic-full-name --abbrev-ref HEAD)`:master --force",
-    "start": "cross-env webpack-dev-server --config ./build/webpack.config.js --mode development --watch --open"
-  }
+    "name": "paigevogenthaler",
+    "version": "0.1.0",
+    "description": "personal website",
+    "private": true,
+    "author": "Paige Vogenthaler",
+    "license": "ISC",
+    "homepage": "https://paigevogenthaler.com",
+    "babel": {
+        "presets": [
+            "@babel/preset-react"
+        ],
+        "plugins": [
+            "@babel/plugin-syntax-dynamic-import"
+        ]
+    },
+    "cuttlebelle": {
+        "folder": {
+            "content": "src/app/static/content/",
+            "code": "src/app/static/layouts/",
+            "site": "public/blog",
+            "index": "blog",
+            "homepage": "blog"
+        },
+        "layouts": {
+            "page": "page",
+            "partial": "partial"
+        },
+        "site": {
+            "redirectReact": false
+        }
+    },
+    "dependencies": {
+        "compass-mixins": "^0.12.10",
+        "react": "^16.3.2",
+        "react-dom": "^16.3.2",
+        "react-router-dom": "^5.0.0",
+        "underscore": "^1.9.1"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.5.5",
+        "@babel/core": "^7.5.5",
+        "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+        "@babel/plugin-transform-modules-commonjs": "^7.5.0",
+        "@babel/preset-react": "^7.0.0",
+        "babel-loader": "^8.0.6",
+        "babel-plugin-css-modules-transform": "^1.6.2",
+        "css-loader": "^1.0.0",
+        "cuttlebelle": "^1.0.0-alpha.67",
+        "gulp": "^4.0.2",
+        "gulp-sass": "^4.0.2",
+        "mathsass": "^0.10.1",
+        "node-sass": "^4.9.3",
+        "sass-loader": "^7.1.0",
+        "style-loader": "^0.23.0",
+        "webpack": "4.19.1",
+        "webpack-cli": "2.1.4",
+        "webpack-dev-server": "^3.7.2"
+    },
+    "scripts": {
+        "build": "webpack --config ./build/webpack.config.js --mode production",
+        "cuttlebelle": "gulp sass --gulpfile ./build/gulp.js & node ./node_modules/cuttlebelle",
+        "deploy": "git subtree push --prefix public origin master",
+        "force-deploy": "git push origin `git subtree split --prefix public origin $(git rev-parse --symbolic-full-name --abbrev-ref HEAD)`: master --force",
+        "start": "webpack-dev-server --config ./build/webpack.config.js --mode development --watch --open"
+    }
 }

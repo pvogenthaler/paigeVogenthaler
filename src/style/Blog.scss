@@ -1,8 +1,2 @@
-
-@mixin Blog {
-    .blog {
-        display: flex;
-        @include flex-direction(column);
-        @include align-items(center);
-    }
-}
+@import './Base';
+@include Base;

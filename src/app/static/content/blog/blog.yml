@@ -1,0 +1,8 @@
+title: Manager's README
+stylesheet: Blog
+header:
+  - /_partials/header.md
+main:
+  - body.md
+footer:
+  - /_partials/footer.md
