@@ -1,0 +1,30 @@
+@import './_vars';
+
+@mixin Footer {
+    .footer {
+        list-style: none;
+        display: flex;
+        padding: 0;
+
+        li {
+            padding: 10px;
+
+            a {
+                display: flex;
+                @include align-items(center);
+                @include justify-content(center);
+                background: #fcfcfc;
+                border: 5.656px solid #E5E2E2;
+                border-radius: 50%;
+                color: #fcfcfc;
+                height: 35px;
+                width: 35px;
+                transition: border-color .3s,transform .3s;
+
+                &:hover {
+                    transform: scale(1.125);
+                }
+            }
+        }
+    }
+}

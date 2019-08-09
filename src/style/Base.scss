@@ -1,3 +1,6 @@
+@import './_vars';
+@import './Footer';
+
 @mixin Base {
 
     $largeFont:22px;
@@ -11,13 +14,14 @@
     #root {
         height: 100%;
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flex-direction(column);
+        @include justify-content(space-between);
+        @include align-items(center);
         font-family: Helvetica Neue,"nimbus-sans",Helvetica,Arial,sans-serif;
 
         .menu {
             display: flex;
-            justify-content: center;
+            @include justify-content(center);
             font-size: $largeFont;
             margin: 20px;
 
@@ -38,10 +42,20 @@
 
         .main {
             width: 60%;
-            height: 100%;
+            -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+               -moz-animation: fadein 2s; /* Firefox < 16 */
+                -ms-animation: fadein 2s; /* Internet Explorer */
+                 -o-animation: fadein 2s; /* Opera < 12.1 */
+                    animation: fadein 2s;
+            @keyframes fadein {
+                from { opacity: 0; }
+                to   { opacity: 1; }
+            }
 
             @content;
         }
+
+        @include Footer;
     }
 
 }

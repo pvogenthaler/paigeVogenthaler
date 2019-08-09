@@ -2,7 +2,7 @@ import React from 'react';
 
 const Contact = () => (
     <div className="contact">
-      Contact Me: paige.vogenthaler@gmail.com
+        Contact Me.
     </div>
 );
 

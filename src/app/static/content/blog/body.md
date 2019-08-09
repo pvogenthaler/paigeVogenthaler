@@ -53,6 +53,3 @@ It’s my job to help you and the team perform its best.
 It’s your responsibility to communicate with you team in a timely manner about any pertinent information that will affect the team and its output.
 Collaborate with your teammates during development, use best practices while coding, and think outside the box when facing challenges.
 Be prepared for 1:1’s so we can create goals and ensure you succeed in your career.
-
-README REFERENCES
-https://hackernoon.com/12-manager-readmes-from-silicon-valleys-top-tech-companies-26588a660afe

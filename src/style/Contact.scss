@@ -3,5 +3,10 @@
         display: flex;
         @include flex-direction(column);
         @include align-items(center);
+
+        ul {
+            list-style: none;
+            display: flex;
+        }
     }
 }
