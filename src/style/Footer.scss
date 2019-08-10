@@ -13,10 +13,8 @@
                 display: flex;
                 @include align-items(center);
                 @include justify-content(center);
-                background: #fcfcfc;
-                border: 5.656px solid #E5E2E2;
+                border: 5.656px solid lightGrey;
                 border-radius: 50%;
-                color: #fcfcfc;
                 height: 35px;
                 width: 35px;
                 transition: border-color .3s,transform .3s;

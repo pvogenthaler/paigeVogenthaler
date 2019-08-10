@@ -30,28 +30,38 @@
                 color: inherit;
                 margin: 8px;
                 padding: 8px;
-                border: 1px solid white;
-                border-radius: 1px;
                 white-space: nowrap;
+                position: relative;
+                @include animation-fadein(0.5s);
 
-                &:hover, &.active {
-                    border-color: black;
+                &:after {
+                    content: "";
+                    bottom: 0;
+                    right: 0;
+                    width: 0;
+                    height: 2px;
+                    position: absolute;
+                    background-color: lightGrey;
+                    transition: width 0.5s ease-out;
+                    @include animation-fadein(3s);
+                }
+                &.active:after {
+                    background-color: black;
+                }
+                &:hover:after {
+                    background-color: lightGrey;
+                }
+                &:hover:after, &.active:after {
+                    right: 0;
+                    left: auto;
+                    width: 100%;
                 }
             }
         }
 
         .main {
+            flex-grow: 1;
             width: 60%;
-            -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-               -moz-animation: fadein 2s; /* Firefox < 16 */
-                -ms-animation: fadein 2s; /* Internet Explorer */
-                 -o-animation: fadein 2s; /* Opera < 12.1 */
-                    animation: fadein 2s;
-            @keyframes fadein {
-                from { opacity: 0; }
-                to   { opacity: 1; }
-            }
-
             @content;
         }
 

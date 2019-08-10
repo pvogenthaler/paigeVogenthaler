@@ -6,45 +6,47 @@ $speed:8s;
 $degStart:360deg;
 $degEnd:0deg;
 
-@mixin rot {
+@mixin rotation {
     from {
         @include rotate($degStart);
-      }
-      to {
+    }
+    to {
         @include rotate($degEnd);
-      }
+    }
 }
 
 @mixin Home {
-    .ring {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: $size;
-      height: $size;
-      border-radius: 50%;
+    .home {
+        .ring {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: $size;
+          height: $size;
+          border-radius: 50%;
 
-      @for $i from 1 to $ringCount+1 {
-        $dotCount: $i*3;
-        $dotsList: ();
+          @for $i from 1 to $ringCount+1 {
+            $dotCount: $i*3;
+            $dotsList: ();
 
-        @for $j from 0 to $dotCount {
-          $x: $j*$degStart/$dotCount;
-          $dotsList: $dotsList, $i*cos($x)*1em $i*sin($x)*1em; // magic
+            @for $j from 0 to $dotCount {
+              $x: $j*$degStart/$dotCount;
+              $dotsList: $dotsList, $i*cos($x)*1em $i*sin($x)*1em; // magic
+            }
+
+            &:nth-child(#{$i}) {
+              box-shadow: $dotsList;
+              animation: rot $i*$speed linear infinite;
+            }
+            @keyframes rot {
+                @include rotation;
+            }
+            /* Safari and Chrome */
+            @-webkit-keyframes rot {
+                @include rotation;
+            }
+          }
         }
-
-        &:nth-child(#{$i}) {
-          box-shadow: $dotsList;
-          animation: rot $i*$speed linear infinite;
-        }
-      }
-    }
-
-    @keyframes rot {
-        @include rot;
-    }
-    /* Safari and Chrome */
-    @-webkit-keyframes rot {
-        @include rot;
+        @include animation-fadein(5s);
     }
 }

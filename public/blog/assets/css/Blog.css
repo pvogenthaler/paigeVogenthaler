@@ -39,12 +39,69 @@ html, body {
       color: inherit;
       margin: 8px;
       padding: 8px;
-      border: 1px solid white;
-      border-radius: 1px;
-      white-space: nowrap; }
-      #root .menu a:hover, #root .menu a.active {
-        border-color: black; }
+      white-space: nowrap;
+      position: relative;
+      -webkit-animation: fadein 0.5s;
+      /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: fadein 0.5s;
+      /* Firefox < 16 */
+      -ms-animation: fadein 0.5s;
+      /* Internet Explorer */
+      -o-animation: fadein 0.5s;
+      /* Opera < 12.1 */
+      animation: fadein 0.5s; }
+
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+      #root .menu a:after {
+        content: "";
+        bottom: 0;
+        right: 0;
+        width: 0;
+        height: 2px;
+        position: absolute;
+        background-color: lightGrey;
+        transition: width 0.5s ease-out;
+        -webkit-animation: fadein 3s;
+        /* Safari, Chrome and Opera > 12.1 */
+        -moz-animation: fadein 3s;
+        /* Firefox < 16 */
+        -ms-animation: fadein 3s;
+        /* Internet Explorer */
+        -o-animation: fadein 3s;
+        /* Opera < 12.1 */
+        animation: fadein 3s; }
+
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+      #root .menu a.active:after {
+        background-color: black; }
+      #root .menu a:hover:after {
+        background-color: lightGrey; }
+      #root .menu a:hover:after, #root .menu a.active:after {
+        right: 0;
+        left: auto;
+        width: 100%; }
   #root .main {
+    flex-grow: 1;
     width: 60%; }
   #root .footer {
     list-style: none;
@@ -65,10 +122,8 @@ html, body {
         -ms-justify-content: center;
         -webkit-justify-content: center;
         justify-content: center;
-        background: #fcfcfc;
-        border: 5.656px solid #E5E2E2;
+        border: 5.656px solid lightGrey;
         border-radius: 50%;
-        color: #fcfcfc;
         height: 35px;
         width: 35px;
         transition: border-color .3s,transform .3s; }
