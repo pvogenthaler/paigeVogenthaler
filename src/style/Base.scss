@@ -45,16 +45,13 @@
                     transition: width 0.5s ease-out;
                     @include animation-fadein(3s);
                 }
-                &.active:after {
-                    background-color: black;
-                }
-                &:hover:after {
-                    background-color: lightGrey;
-                }
                 &:hover:after, &.active:after {
                     right: 0;
                     left: auto;
                     width: 100%;
+                }
+                &.active:after {
+                    background-color: black;
                 }
             }
         }

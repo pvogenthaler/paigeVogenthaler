@@ -92,14 +92,12 @@ html, body {
     opacity: 0; }
   to {
     opacity: 1; } }
-      #root .menu a.active:after {
-        background-color: black; }
-      #root .menu a:hover:after {
-        background-color: lightGrey; }
       #root .menu a:hover:after, #root .menu a.active:after {
         right: 0;
         left: auto;
         width: 100%; }
+      #root .menu a.active:after {
+        background-color: black; }
   #root .main {
     flex-grow: 1;
     width: 60%; }
@@ -124,8 +122,8 @@ html, body {
         justify-content: center;
         border: 5.656px solid lightGrey;
         border-radius: 50%;
-        height: 35px;
-        width: 35px;
+        height: 30px;
+        width: 30px;
         transition: border-color .3s,transform .3s; }
         #root .footer li a:hover {
           transform: scale(1.125); }

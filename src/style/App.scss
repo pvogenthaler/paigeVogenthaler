@@ -8,4 +8,9 @@
     @include Home;
     @include About;
     @include Contact;
+
+    .blog {
+        display: flex;
+        @include justify-content(center);
+    }
 }

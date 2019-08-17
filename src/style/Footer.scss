@@ -1,6 +1,8 @@
 @import './_vars';
 
 @mixin Footer {
+    $size:30px;
+
     .footer {
         list-style: none;
         display: flex;
@@ -15,8 +17,8 @@
                 @include justify-content(center);
                 border: 5.656px solid lightGrey;
                 border-radius: 50%;
-                height: 35px;
-                width: 35px;
+                height: $size;
+                width: $size;
                 transition: border-color .3s,transform .3s;
 
                 &:hover {

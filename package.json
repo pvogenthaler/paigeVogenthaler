@@ -18,9 +18,7 @@
         "folder": {
             "content": "src/app/static/content/",
             "code": "src/app/static/layouts/",
-            "site": "public/blog",
-            "index": "blog",
-            "homepage": "blog"
+            "site": "public/blog"
         },
         "layouts": {
             "page": "page",
