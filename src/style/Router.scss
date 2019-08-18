@@ -1,0 +1,39 @@
+@import './_vars';
+
+@mixin Router {
+    .router {
+        display: flex;
+        @include justify-content(center);
+        font-size: $largeFont;
+        margin: 20px;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            margin: 8px;
+            padding: 8px;
+            white-space: nowrap;
+            position: relative;
+            @include animation-fadein(1s);
+
+            &:after {
+                content: "";
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                position: absolute;
+                background-color: $lightGrey;
+                transition: width 0.5s ease, background-color 0.5s, color 1s;
+                @include animation-fadein(3s);
+            }
+            &:hover:after {
+                width: 100%;
+            }
+            &.active:after {
+                width: 100%;
+                background-color: $darkGrey;
+            }
+        }
+    }
+}

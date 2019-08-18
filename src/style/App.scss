@@ -2,15 +2,12 @@
 @import './Base';
 @import './Home';
 @import './About';
+@import './Blog';
 @import './Contact';
 
 @include Base {
     @include Home;
     @include About;
+    @include Blog;
     @include Contact;
-
-    .blog {
-        display: flex;
-        @include justify-content(center);
-    }
 }

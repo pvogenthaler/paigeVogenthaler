@@ -13,6 +13,13 @@ const getRings = () => {
     return Rings;
 }
 
-const Home = () => <div className="home">{getRings()}</div>;
+const Home = () => (
+    <div className="home">
+        <h1>Paige Vogenthaler</h1>
+        <div className='rings'>
+            {getRings()}
+        </div>
+    </div>
+);
 
 export default Home;

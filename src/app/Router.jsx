@@ -7,7 +7,7 @@ import Contact from './Contact';
 
 const Router = () => (
     <Fragment>
-        <div className='menu'>
+        <div className='router'>
             <NavLink to='/' exact activeClassName='active'>Home</NavLink>
             <NavLink to='/about' activeClassName='active'>About</NavLink>
             <NavLink to='/blog' activeClassName='active'>Blog</NavLink>

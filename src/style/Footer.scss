@@ -5,8 +5,11 @@
 
     .footer {
         list-style: none;
-        display: flex;
         padding: 0;
+        display: flex;
+        @include justify-content(center);
+        @include align-items(center);
+        @include animation-fadein(1s);
 
         li {
             padding: 10px;
@@ -15,14 +18,17 @@
                 display: flex;
                 @include align-items(center);
                 @include justify-content(center);
-                border: 5.656px solid lightGrey;
+                border: 2px solid $lightGrey;
                 border-radius: 50%;
                 height: $size;
                 width: $size;
-                transition: border-color .3s,transform .3s;
+                transition: transform 0.55s ease-in-out;
+                padding: 4px;
 
-                &:hover {
-                    transform: scale(1.125);
+                @media (hover: hover) {
+                    &:hover {
+                        transform: scale(1.15) rotate(360deg);
+                    }
                 }
             }
         }

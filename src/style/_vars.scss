@@ -1,3 +1,10 @@
+$largeFont:22px;
+
+$offWhite:rgb(253, 253, 250);
+$lightGrey:silver;
+$darkGrey:dimgrey;
+$black:rgb(50, 50, 50);
+
 $z-indexes: (
     "outdated-browser",
     "modal",
@@ -114,5 +121,41 @@ $z-indexes: (
     @-webkit-keyframes fadein {
         from { opacity: 0; }
         to   { opacity: 1; }
+    }
+}
+
+// Responsive Media Queries
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-desktop-XL: 1440px;
+
+@mixin size-min-tablet {
+    @media screen and (min-width: $breakpoint-tablet) {
+        @content;
+    }
+}
+@mixin size-min-desktop {
+    @media screen and (min-width: $breakpoint-desktop) {
+        @content;
+    }
+}
+@mixin size-min-desktopXL {
+    @media screen and (min-width: $breakpoint-desktop-XL) {
+        @content;
+    }
+}
+@mixin size-only-mobile {
+    @media screen and (max-width: #{$breakpoint-tablet - 1}) {
+        @content;
+    }
+}
+@mixin size-only-tablet {
+    @media screen and (min-width: $breakpoint-tablet) and (max-width: #{$breakpoint-desktop - 1}) {
+        @content;
+    }
+}
+@mixin size-only-desktop {
+    @media screen and (min-width: $breakpoint-desktop) and (max-width: #{$breakpoint-desktop-XL - 1}) {
+        @content;
     }
 }

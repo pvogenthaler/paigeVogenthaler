@@ -1,5 +1,5 @@
 title: Manager's README
-stylesheet: Blog
+stylesheet: BlogArticle
 header:
   - /_partials/header.md
 main:

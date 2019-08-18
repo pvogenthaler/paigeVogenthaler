@@ -2,7 +2,7 @@
 
 $ringCount:10;
 $size:0.25em;
-$speed:8s;
+$speed:3s;
 $degStart:360deg;
 $degEnd:0deg;
 
@@ -17,36 +17,46 @@ $degEnd:0deg;
 
 @mixin Home {
     .home {
-        .ring {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: $size;
-          height: $size;
-          border-radius: 50%;
+        display: flex;
+        @include justify-content(center);
 
-          @for $i from 1 to $ringCount+1 {
-            $dotCount: $i*3;
-            $dotsList: ();
-
-            @for $j from 0 to $dotCount {
-              $x: $j*$degStart/$dotCount;
-              $dotsList: $dotsList, $i*cos($x)*1em $i*sin($x)*1em; // magic
-            }
-
-            &:nth-child(#{$i}) {
-              box-shadow: $dotsList;
-              animation: rot $i*$speed linear infinite;
-            }
-            @keyframes rot {
-                @include rotation;
-            }
-            /* Safari and Chrome */
-            @-webkit-keyframes rot {
-                @include rotation;
-            }
-          }
+        h1 {
+            font-weight: normal;
         }
-        @include animation-fadein(5s);
+        .ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: $size;
+            height: $size;
+            border-radius: 50%;
+
+            @for $i from 1 to $ringCount+1 {
+                $dotCount: if($i == 1, 6, ($i+1)*4);
+                $dotsList: ();
+
+                @for $j from 0 to $dotCount {
+                    $x: $j*$degStart/$dotCount;
+                    $offsetX: $i*cos($x)*1em;
+                    $offsetY: $i*sin($x)*1em;
+                    $dotColor: if($j%2 == 0, $darkGrey, $lightGrey);
+                    $dotsList: $dotsList, $offsetX $offsetY $dotColor;
+                }
+
+                &:nth-child(#{$i}) {
+                    box-shadow: $dotsList;
+                    animation: rot $i*$speed linear infinite;
+                }
+                @keyframes rot {
+                    @include rotation;
+                }
+                /* Safari and Chrome */
+                @-webkit-keyframes rot {
+                    @include rotation;
+                }
+            }
+        }
+
+        @keyframes rot { to { transform: rotate(360deg); } }
     }
 }
