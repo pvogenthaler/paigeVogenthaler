@@ -1,6 +1,7 @@
 @import './_vars';
 @import './Footer';
 @import './Router';
+@import './Diagonals';
 
 @mixin Base {
     html, body {
@@ -8,11 +9,13 @@
         width: 100%;
         margin: 0;
         color: $black;
-        background-color: $offWhite;
+        overflow: hidden;
     }
-
+    @include Diagonals;
     #root {
-        min-height: 100%;
+        height: 100vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
         display: flex;
         @include flex-direction(column);
         @include justify-content(space-between);
@@ -21,16 +24,15 @@
         @include Router;
 
         .main {
+            width: 100vw;
+            padding: 0 10vw;
             display: flex;
-            @include justify-content(center);
             flex-grow: 1;
-            height: 100%;
-            width: 80%;
+            @include justify-content(center);
             @include animation-fadein(4s);
             @content;
         }
 
         @include Footer;
     }
-
 }

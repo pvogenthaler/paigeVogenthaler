@@ -5,15 +5,17 @@
         display: flex;
         @include justify-content(center);
         font-size: $largeFont;
-        margin: 20px;
+        margin: 30px;
 
         a {
             text-decoration: none;
             color: inherit;
-            margin: 8px;
-            padding: 8px;
+            margin: 4px;
+            padding: 2px;
             white-space: nowrap;
             position: relative;
+            transform: rotate(15deg);
+            transition: transform 0.3s ease-in-out;
             @include animation-fadein(1s);
 
             &:after {
@@ -27,12 +29,15 @@
                 transition: width 0.5s ease, background-color 0.5s, color 1s;
                 @include animation-fadein(3s);
             }
+            &:hover {
+                color: $mediumGrey;
+            }
             &:hover:after {
                 width: 100%;
             }
             &.active:after {
                 width: 100%;
-                background-color: $darkGrey;
+                background-color: $olive;
             }
         }
     }

@@ -28,6 +28,7 @@
                 @media (hover: hover) {
                     &:hover {
                         transform: scale(1.15) rotate(360deg);
+                        border-color: goldenrod;
                     }
                 }
             }
