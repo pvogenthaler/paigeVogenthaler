@@ -27,21 +27,23 @@ const Page = ({ title, stylesheet, header, main, footer, script, _relativeURL, _
 			<meta name='robots' content='index,follow' />
 			<meta name='googlebot' content='index,follow' />
 			<meta name='distribution' content='web' />
-			<meta httpEquiv='refresh' content='30' />
 			<meta name='HandheldFriendly' content='true' />
 			<title>{!!title ? `${title} | ` : ''}Paige Vogenthaler</title>
 			<link rel='icon' href='/assets/favicon.png' type='image/png'></link>
 			{!!stylesheet ? <link rel='stylesheet' href={_relativeURL(`/assets/css/${stylesheet}.css`, _ID)} /> : null}
 		</head>
-		<body id='root'>
-			<StaticRouter location={{ pathname: '/blog/index.html' }}>
-				<Router />
-			</StaticRouter>
-			<div className='main'>
-				<h2>{header}</h2>
-				{main}
+		<body>
+			<div id='root'>
+				<StaticRouter location={{ pathname: '/blog/index.html' }}>
+					<Router>
+						<div className='blogArticle'>
+							<h2>{header}</h2>
+							{main}
+						</div>
+					</Router>
+				</StaticRouter>
+				<Footer />
 			</div>
-			<Footer />
 			{!!script ? <script src={_relativeURL(`/assets/js/${script}.js`, _ID )} /> : null}
 		</body>
 		</html>

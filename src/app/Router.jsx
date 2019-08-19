@@ -5,7 +5,7 @@ import About from './About';
 import Blog from './Blog';
 import Contact from './Contact';
 
-const Router = () => (
+const Router = ({ children }) => (
     <Fragment>
         <div className='router'>
             <NavLink to='/' exact activeClassName='active'>Home</NavLink>
@@ -18,6 +18,7 @@ const Router = () => (
             <Route path='/about' component={About} />
             <Route path='/blog' exact component={Blog} />
             <Route path='/contact' component={Contact} />
+            { !!children ? children : null }
         </div>
     </Fragment>
 );
