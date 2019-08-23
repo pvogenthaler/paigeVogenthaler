@@ -17,22 +17,26 @@ $degEnd:0deg;
 
 @mixin Home {
     .home {
-        display: flex;
-        @include justify-content(center);
-
         h1 {
-            font-weight: 300;
-            padding: $sizing-XS;
-            letter-spacing: $sizing-XS;
+            font-weight: 400;
+            letter-spacing: 3px;
             margin: 0;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: $light-grey;
         }
         .ring {
             position: absolute;
-            top: 50%;
+            top: 45%;
             left: 50%;
             width: $size;
             height: $size;
             border-radius: 50%;
+            opacity: 0.7;
 
             @for $i from 1 to $ringCount+1 {
                 $dotCount: if($i == 1, 6, ($i+1)*4);
