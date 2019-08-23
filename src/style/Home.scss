@@ -21,7 +21,10 @@ $degEnd:0deg;
         @include justify-content(center);
 
         h1 {
-            font-weight: normal;
+            font-weight: 300;
+            padding: $sizing-XS;
+            letter-spacing: $sizing-XS;
+            margin: 0;
         }
         .ring {
             position: absolute;
@@ -39,7 +42,7 @@ $degEnd:0deg;
                     $x: $j*$degStart/$dotCount;
                     $offsetX: $i*cos($x)*1em;
                     $offsetY: $i*sin($x)*1em;
-                    $dotColor: if($j%2 == 0, if($j%4 == 0, $gold, $olive), if($j%3 == 0, $pink, $lightGrey));
+                    $dotColor: if($j%2 == 0, if($j%4 == 0, $gold, $olive), if($j%3 == 0, $pink, $light-grey));
                     $dotsList: $dotsList, $offsetX $offsetY $dotColor;
                 }
 

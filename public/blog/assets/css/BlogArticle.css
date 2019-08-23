@@ -3,6 +3,7 @@ html, body {
   width: 100%;
   margin: 0;
   color: #323232;
+  font-weight: 300;
   overflow: hidden; }
 
 .diagonals {
@@ -14,27 +15,26 @@ html, body {
   bottom: 0;
   left: 0;
   opacity: 0.2;
-  z-index: -1;
   background-color: #fdfcef;
-  overflow: hidden; }
+  overflow: hidden;
+  z-index: -1; }
   .diagonals .diagonal-1 {
     position: absolute;
     height: 0;
     width: 200vw;
     bottom: 0;
     right: 5vw;
-    border-bottom: 3px solid lightpink;
+    border-bottom: 4px solid lightpink;
     transform-origin: bottom right;
     transform: rotate(5deg); }
   .diagonals .diagonal-2 {
     position: absolute;
     height: 0;
-    width: 200vh;
+    width: 200vw;
     bottom: 0;
     left: 10vw;
     border-bottom: 1px solid goldenrod;
     transform-origin: bottom left;
-    transform: rotate(-55deg);
     transform: rotate(-65deg); }
   .diagonals .diagonal-3 {
     position: absolute;
@@ -95,17 +95,21 @@ html, body {
     -ms-justify-content: center;
     -webkit-justify-content: center;
     justify-content: center;
-    font-size: 22px;
-    margin: 30px; }
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 40px 0; }
     #root .router a {
       text-decoration: none;
-      color: inherit;
-      margin: 4px;
-      padding: 2px;
+      color: grey;
+      margin: 2px;
+      padding: 8px 4px;
       white-space: nowrap;
       position: relative;
-      transform: rotate(15deg);
+      transform: rotate(12deg);
       transition: transform 0.3s ease-in-out;
+      background-color: #ececec;
+      width: 64px;
       -webkit-animation: fadein 1s;
       /* Safari, Chrome and Opera > 12.1 */
       -moz-animation: fadein 1s;
@@ -134,7 +138,7 @@ html, body {
         width: 0;
         height: 2px;
         position: absolute;
-        background-color: silver;
+        background-color: grey;
         transition: width 0.5s ease, background-color 0.5s, color 1s;
         -webkit-animation: fadein 3s;
         /* Safari, Chrome and Opera > 12.1 */
@@ -157,13 +161,13 @@ html, body {
     opacity: 0; }
   to {
     opacity: 1; } }
-      #root .router a:hover {
-        color: grey; }
       #root .router a:hover:after {
         width: 100%; }
-      #root .router a.active:after {
-        width: 100%;
-        background-color: olivedrab; }
+      #root .router a.active {
+        color: #323232; }
+        #root .router a.active:after {
+          width: 100%;
+          background-color: olivedrab; }
   #root .main {
     width: 100vw;
     padding: 0 10vw;
@@ -235,7 +239,7 @@ html, body {
   to {
     opacity: 1; } }
     #root .footer li {
-      padding: 10px; }
+      padding: 8px; }
       #root .footer li a {
         display: flex;
         -moz-align-items: center;
@@ -251,8 +255,8 @@ html, body {
         justify-content: center;
         border: 2px solid silver;
         border-radius: 50%;
-        height: 30px;
-        width: 30px;
+        height: 32px;
+        width: 32px;
         transition: transform 0.55s ease-in-out;
         padding: 4px; }
         @media (hover: hover) {

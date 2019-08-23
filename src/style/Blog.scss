@@ -2,12 +2,17 @@
 
 @mixin Blog {
     .blog {
+        padding: $sizing-MD;
+
         a {
             text-decoration: none;
             color: inherit;
+            font-size: $font-size-XL;
+            color: $gold;
+            text-transform: uppercase;
 
             &:hover {
-                color: $gold;
+                color: $light-grey;
             }
         }
     }

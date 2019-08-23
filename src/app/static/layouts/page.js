@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Router from '../../Router';
 import Footer from '../../Footer';
+import Diagonals from '../../Diagonals';
 import { StaticRouter } from 'react-router-dom';
 
 const Page = ({ title, stylesheet, header, main, footer, script, _relativeURL, _ID }) => {
@@ -43,6 +44,7 @@ const Page = ({ title, stylesheet, header, main, footer, script, _relativeURL, _
 					</Router>
 				</StaticRouter>
 				<Footer />
+				<Diagonals />
 			</div>
 			{!!script ? <script src={_relativeURL(`/assets/js/${script}.js`, _ID )} /> : null}
 		</body>

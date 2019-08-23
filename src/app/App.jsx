@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import '../style/App';
 import Router from './Router';
 import Footer from './Footer';
+import Diagonals from './Diagonals';
 import { BrowserRouter } from 'react-router-dom';
 
 const App = () => (
@@ -11,6 +12,7 @@ const App = () => (
             <Router />
         </BrowserRouter>
         <Footer />
+        <Diagonals />
     </Fragment>
 );
 

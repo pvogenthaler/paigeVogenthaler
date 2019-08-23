@@ -18,14 +18,14 @@
         @include align-items(center);
 
         .img-wrapper {
-            margin: 15px;
+            margin: $sizing-LG;
             @include img-size;
 
             img {
                 @include img-size;
                 object-fit: cover;
                 border-radius: 50%;
-                border: 4px solid $lightGrey;
+                border: $sizing-2XS solid $pink;
             }
         }
     }

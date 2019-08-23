@@ -14,7 +14,7 @@ const About = () => (
         </p>
         <p>
             In my free time, I frequent Joffrey Ballet and Chicago Symphony
-            Orchestra performances. I also spend a lot of time at home with my
+            Orchestra performances. I also spend a lot of time with my
             loving, orange tabby cat, Howie.
         </p>
     </div>

@@ -4,18 +4,22 @@
     .router {
         display: flex;
         @include justify-content(center);
-        font-size: $largeFont;
-        margin: 30px;
+        font-size: $font-size-SM;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin: $sizing-3XL 0;
 
         a {
             text-decoration: none;
-            color: inherit;
-            margin: 4px;
-            padding: 2px;
+            color: $medium-grey;
+            margin: $sizing-2XS;
+            padding: $sizing-SM $sizing-XS;
             white-space: nowrap;
             position: relative;
-            transform: rotate(15deg);
+            transform: rotate(12deg);
             transition: transform 0.3s ease-in-out;
+            background-color: $lighter-grey;
+            width: $sizing-6XL;
             @include animation-fadein(1s);
 
             &:after {
@@ -23,21 +27,21 @@
                 bottom: 0;
                 left: 0;
                 width: 0;
-                height: 2px;
+                height: $sizing-2XS;
                 position: absolute;
-                background-color: $lightGrey;
+                background-color: $medium-grey;
                 transition: width 0.5s ease, background-color 0.5s, color 1s;
                 @include animation-fadein(3s);
-            }
-            &:hover {
-                color: $mediumGrey;
             }
             &:hover:after {
                 width: 100%;
             }
-            &.active:after {
-                width: 100%;
-                background-color: $olive;
+            &.active {
+                color: $soft-black;
+                &:after {
+                    width: 100%;
+                    background-color: $olive;
+                }
             }
         }
     }

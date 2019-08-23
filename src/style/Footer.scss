@@ -1,8 +1,6 @@
 @import './_vars';
 
 @mixin Footer {
-    $size:30px;
-
     .footer {
         list-style: none;
         padding: 0;
@@ -12,18 +10,18 @@
         @include animation-fadein(1s);
 
         li {
-            padding: 10px;
+            padding: $sizing-SM;
 
             a {
                 display: flex;
                 @include align-items(center);
                 @include justify-content(center);
-                border: 2px solid $lightGrey;
+                border: $sizing-2XS solid $light-grey;
                 border-radius: 50%;
-                height: $size;
-                width: $size;
+                height: $sizing-2XL;
+                width: $sizing-2XL;
                 transition: transform 0.55s ease-in-out;
-                padding: 4px;
+                padding: $sizing-XS;
 
                 @media (hover: hover) {
                     &:hover {
