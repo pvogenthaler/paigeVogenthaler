@@ -5,18 +5,15 @@
 
 @mixin Base {
     html, body {
-        height: 100%;
-        width: 100%;
+        height: 100vh;
+        width: 100vw;
         margin: 0;
         color: $soft-black;
         font-weight: 300;
-        overflow: hidden;
     }
     @include Diagonals;
     #root {
         height: 100vh;
-        overflow-y: scroll;
-        overflow-x: hidden;
         display: flex;
         @include flex-direction(column);
         @include justify-content(space-between);
@@ -25,8 +22,8 @@
         @include Router;
 
         .main {
-            width: 100vw;
-            padding: 0 10vw;
+            max-width: 100vw;
+            margin: 0 10vw;
             display: flex;
             flex-grow: 1;
             @include justify-content(center);

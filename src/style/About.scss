@@ -11,8 +11,6 @@
 
 @mixin About {
     .about {
-        width: 100vw;
-        padding: 0 15vw;
         display: flex;
         @include flex-direction(column);
         @include align-items(center);
