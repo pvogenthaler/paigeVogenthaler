@@ -23,11 +23,9 @@
                 transition: transform 0.55s ease-in-out;
                 padding: $sizing-XS;
 
-                @media (hover: hover) {
-                    &:hover {
-                        transform: scale(1.15) rotate(360deg);
-                        border-color: goldenrod;
-                    }
+                &:hover, &:active, &:focus {
+                    transform: scale(1.15) rotate(360deg);
+                    border-color: goldenrod;
                 }
             }
         }

@@ -11,7 +11,7 @@
             color: $gold;
             text-transform: uppercase;
 
-            &:hover {
+            &:hover, &:focus, &:active {
                 color: $light-grey;
             }
         }
