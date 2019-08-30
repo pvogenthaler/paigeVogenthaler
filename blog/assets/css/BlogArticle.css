@@ -257,7 +257,6 @@ html, body {
         width: 32px;
         transition: transform 0.55s ease-in-out;
         padding: 4px; }
-        @media (hover: hover) {
-          #root .footer li a:hover {
-            transform: scale(1.15) rotate(360deg);
-            border-color: goldenrod; } }
+        #root .footer li a:hover, #root .footer li a:active, #root .footer li a:focus {
+          transform: scale(1.15) rotate(360deg);
+          border-color: goldenrod; }
