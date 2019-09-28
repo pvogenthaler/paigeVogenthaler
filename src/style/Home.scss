@@ -17,6 +17,7 @@ $degEnd:0deg;
 
 @mixin Home {
     .home {
+        @include animation-fadein(4s);
         h1 {
             font-weight: 400;
             letter-spacing: 3px;

@@ -1,7 +1,0 @@
-title: Manager's README
-header:
-  - /_partials/header.md
-main:
-  - body.md
-footer:
-  - /_partials/footer.md

@@ -1,1 +1,0 @@
-Manager's README
