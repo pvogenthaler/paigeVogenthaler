@@ -5,7 +5,7 @@ import Footer from '../../Footer';
 import Diagonals from '../../Diagonals';
 import { StaticRouter } from 'react-router-dom';
 
-const Page = ({ title, stylesheet, header, main, footer, script, _relativeURL, _ID }) => {
+const Page = ({ title, stylesheet, header, main, footer, _relativeURL, _ID }) => {
 	const name = 'Paige Vogenthaler';
 	const description = 'The portfolio of Paige Vogenthaler';
 
@@ -31,7 +31,8 @@ const Page = ({ title, stylesheet, header, main, footer, script, _relativeURL, _
 			<meta name='HandheldFriendly' content='true' />
 			<title>{!!title ? `${title} | ` : ''}Paige Vogenthaler</title>
 			<link rel='icon' href='/assets/favicon.png' type='image/png'></link>
-			{!!stylesheet ? <link rel='stylesheet' href={_relativeURL(`/assets/css/${stylesheet}.css`, _ID)} /> : null}
+			<script src={_relativeURL(`/assets/js/analytics.js`, _ID)}></script>
+			<link rel='stylesheet' href={_relativeURL(`/assets/css/BlogArticle.css`, _ID)} />
 		</head>
 		<body>
 			<div id='root'>
@@ -46,7 +47,6 @@ const Page = ({ title, stylesheet, header, main, footer, script, _relativeURL, _
 				<Footer />
 				<Diagonals />
 			</div>
-			{!!script ? <script src={_relativeURL(`/assets/js/${script}.js`, _ID )} /> : null}
 		</body>
 		</html>
 	);

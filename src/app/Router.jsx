@@ -5,22 +5,33 @@ import About from './About';
 import Blog from './Blog';
 import Contact from './Contact';
 
-const Router = ({ children }) => (
-    <Fragment>
-        <div className='router'>
-            <NavLink to='/' exact activeClassName='active'>Home</NavLink>
-            <NavLink to='/about' activeClassName='active'>About</NavLink>
-            <NavLink to='/blog' activeClassName='active'>Blog</NavLink>
-            <NavLink to='/contact' activeClassName='active'>Contact</NavLink>
-        </div>
-        <div className='main'>
-            <Route path='/' exact component={Home} />
-            <Route path='/about' component={About} />
-            <Route path='/blog' exact component={Blog} />
-            <Route path='/contact' component={Contact} />
-            { !!children ? children : null }
-        </div>
-    </Fragment>
-);
+const Router = ({ children }) => {
+    const onRender = component => {
+        if (typeof window.ga === 'function') {
+            window.ga('set', 'page', window.location.pathname + window.location.search);
+            window.ga('send', 'pageview');
+        }
+
+        return component;
+    };
+
+    return (
+        <Fragment>
+            <div className='router'>
+                <NavLink to='/' exact activeClassName='active'>Home</NavLink>
+                <NavLink to='/about' activeClassName='active'>About</NavLink>
+                <NavLink to='/blog' activeClassName='active'>Blog</NavLink>
+                <NavLink to='/contact' activeClassName='active'>Contact</NavLink>
+            </div>
+            <div className='main'>
+                <Route path='/' exact render={() => onRender(<Home />)} />
+                <Route path='/about' render={() => onRender(<About />)} />
+                <Route path='/blog' exact render={() => onRender(<Blog />)} />
+                <Route path='/contact' render={() => onRender(<Contact />)} />
+                { !!children ? children : null }
+            </div>
+        </Fragment>
+    );
+};
 
 export default Router;
