@@ -11,19 +11,20 @@ class Nav extends React.Component {
 
     getClassName = path => (
         this.state.pathname.includes(path) ? 'active' : ''
-    )
+    );
 
     render () {
         const { getClassName, state } = this;
         const { pathname } = state;
 
         return (
-            <div className='router'>
+            <nav>
                 <a href='/' className={pathname === '/' ? 'active': ''}>Home</a>
                 <a href='/about' className={getClassName('about')}>About</a>
                 <a href='/blog' className={getClassName('blog')}>Blog</a>
+                <a href='/projects' className={getClassName('projects')}>Projects</a>
                 <a href='/contact' className={getClassName('contact')}>Contact</a>
-            </div>
+            </nav>
         );
     }
 };

@@ -1,8 +1,7 @@
 @import './_vars';
 
 @mixin img-size {
-    height: 75vw;
-    width: 75vw;
+    width: 100%;
     @include size-min-tablet{
         height: 45vh;
         width: 45vh;
@@ -14,17 +13,17 @@
         display: flex;
         @include flex-direction(column);
         @include align-items(center);
+        padding: 12px;
 
-        .img-wrapper {
-            margin: $sizing-LG;
+        img {
             @include img-size;
-
-            img {
-                @include img-size;
-                object-fit: cover;
-                border-radius: 50%;
-                border: $sizing-2XS solid $pink;
-            }
+            object-fit: cover;
+            border-radius: 50%;
+            border: $sizing-2XS solid $pink;
+            margin: $sizing-LG 0;
+        }
+        p {
+            padding: $sizing-SM;
         }
     }
 }

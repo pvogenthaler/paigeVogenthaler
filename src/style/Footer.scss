@@ -5,6 +5,9 @@
         list-style: none;
         padding: 0;
         display: flex;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
         @include justify-content(center);
         @include align-items(center);
         @include animation-fadein(1s);
@@ -12,20 +15,34 @@
         li {
             padding: $sizing-SM;
 
+            &.github a path {
+                fill: none;
+                stroke: $soft-black;
+                stroke-width: $sizing-SM;
+            }
             a {
                 display: flex;
                 @include align-items(center);
                 @include justify-content(center);
-                border: $sizing-2XS solid $light-grey;
-                border-radius: 50%;
-                height: $sizing-2XL;
-                width: $sizing-2XL;
-                transition: transform 0.55s ease-in-out;
+                height: $sizing-3XL;
+                width: $sizing-3XL;
+                transition: transform 5s ease 1s;
                 padding: $sizing-XS;
 
-                &:hover, &:active, &:focus {
-                    transform: scale(1.15) rotate(360deg);
-                    border-color: goldenrod;
+                path {
+                    fill: $soft-black;
+                }
+            }
+            &:hover, &:active, &:focus {
+                transform: scale(1.1);
+
+                path {
+                    fill: $light-grey;
+                }
+                &.github path {
+                    stroke: $light-grey;
+                    fill: none;
+                    stroke-width: $sizing-SM;
                 }
             }
         }

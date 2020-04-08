@@ -1,7 +1,7 @@
 {
     "name": "paigevogenthaler",
     "version": "0.1.0",
-    "description": "personal website",
+    "description": "The blog and portfolio of Paige Vogenthaler.",
     "private": true,
     "author": "Paige Vogenthaler",
     "license": "ISC",
@@ -19,17 +19,17 @@
         "@mdx-js/mdx": "^1.5.0",
         "@mdx-js/react": "^1.5.0",
         "compass-mixins": "^0.12.10",
-        "gatsby": "^2.15.28",
+        "gatsby": "^2.20.4",
         "gatsby-plugin-google-analytics": "^2.1.19",
-        "gatsby-plugin-manifest": "^2.2.20",
+        "gatsby-plugin-manifest": "^2.3.2",
         "gatsby-plugin-mdx": "^1.0.46",
         "gatsby-plugin-offline": "^3.0.11",
         "gatsby-plugin-react-helmet": "^3.1.10",
         "gatsby-plugin-sass": "^2.1.17",
-        "gatsby-plugin-sharp": "^2.2.27",
+        "gatsby-plugin-sharp": "^2.5.3",
         "gatsby-source-filesystem": "^2.1.28",
         "gatsby-transformer-remark": "^2.6.26",
-        "gatsby-transformer-sharp": "^2.2.19",
+        "gatsby-transformer-sharp": "^2.4.2",
         "mathsass": "^0.10.1",
         "prop-types": "^15.7.2",
         "react": "^16.10.0",
@@ -37,7 +37,7 @@
         "react-helmet": "^5.2.1"
     },
     "devDependencies": {
-        "@babel/cli": "^7.5.5",
+        "@babel/cli": "^7.8.4",
         "@babel/core": "^7.5.5",
         "@babel/plugin-proposal-class-properties": "^7.5.5",
         "@babel/plugin-syntax-dynamic-import": "^7.2.0",
@@ -46,7 +46,7 @@
         "babel-loader": "^8.0.6",
         "babel-plugin-css-modules-transform": "^1.6.2",
         "css-loader": "^1.0.0",
-        "node-sass": "^4.12.0",
+        "node-sass": "^4.13.1",
         "webpack": "^4.41.0",
         "webpack-cli": "^3.3.9"
     },
@@ -54,6 +54,6 @@
         "build": "rm -rf public/ && gatsby build && cp ./CNAME public/",
         "deploy": "git subtree push --prefix public origin master",
         "force-deploy": "git push origin `git subtree split --prefix public origin $(git rev-parse --symbolic-full-name --abbrev-ref HEAD)`:master --force",
-        "start": "gatsby develop"
+        "start": "gatsby develop -p 4000"
     }
 }

@@ -43,7 +43,7 @@
             @include diagonal {
                 bottom: 30vh;
                 right: 0;
-                border-bottom: $sizing-2XS solid $olive;
+                border-bottom: $sizing-2XS solid $emerald;
                 transform-origin: bottom right;
                 transform: rotate(85deg);
             }
@@ -61,7 +61,7 @@
             @include diagonal {
                 bottom: 0;
                 right: 0;
-                border-bottom: $sizing-3XS solid $olive;
+                border-bottom: $sizing-3XS solid $emerald;
                 transform-origin: bottom right;
                 transform: rotate(20deg);
             }

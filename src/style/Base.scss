@@ -1,9 +1,13 @@
 @import './_vars';
 @import './Footer';
-@import './Router';
+@import './Nav';
 @import './Diagonals';
 
 @mixin Base {
+    * {
+        margin: 0;
+        box-sizing: border-box;
+    }
     html, body, #___gatsby, #gatsby-focus-wrapper {
         height: 100%;
         width: 100%;
@@ -16,15 +20,16 @@
         height: 100%;
         width: 100%;
         display: flex;
-        @include flex-direction(column);
+        position: relative;
         @include justify-content(space-between);
-        @include align-items(center);
         font-family: Helvetica Neue,"nimbus-sans",Helvetica,Arial,sans-serif;
-        @include Router;
+        @include size-min-tablet {
+            width: 60%;
+            margin: auto;
+        }
+        @include Nav;
 
         .main {
-            max-width: 100%;
-            margin: 0 15vw;
             display: flex;
             flex-grow: 1;
             @include justify-content(center);

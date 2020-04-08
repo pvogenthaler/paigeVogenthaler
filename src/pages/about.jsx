@@ -5,9 +5,7 @@ import paigeNyc from '../assets/paige-nyc.jpg';
 const About = () => (
     <Layout>
         <div className='about'>
-            <div className='img-wrapper'>
-                <img src={paigeNyc} alt="Paige Vogenthaler in NYC"></img>
-            </div>
+            <img src={paigeNyc} alt="Paige Vogenthaler in NYC"></img>
             <p>
                 I am an engineering leader responsible for managing a UI team focused
                 on delivering A/B tests and new front end features. I also founded

@@ -5,9 +5,10 @@ $light-grey:silver;
 $medium-grey:grey;
 $dark-grey:dimgrey;
 $soft-black:#323232;
-$olive:olivedrab;
-$gold:goldenrod;
-$pink:lightpink;
+$black:black;
+$gold:#ffcd38d9;
+$pink:#ffcaca;
+$emerald:#0d610df0;
 
 // Font Sizes
 $font-size-XS:11px;
@@ -41,6 +42,7 @@ $z-indexes-front: ( // list of front to back postitives, e.g Infinity to 1
 
 );
 $z-indexes-back: ( // list of front to back negatives, e.g. -1 to -Infinity
+    "rings",
     "diagonals"
 );
 @function z($name) {

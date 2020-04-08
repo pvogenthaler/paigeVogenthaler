@@ -1,21 +1,10 @@
 module.exports = {
     siteMetadata: {
-        title: `Paige Vogenthaler`,
-        language: `english`,
-        author: `Paige Vogenthaler`,
-        designer: `Paige Vogenthaler`,
-        publisher: `Paige Vogenthaler`,
-        noemailcollection: `http://www.unspam.com/noemailcollection/`,
-        viewport: `width=device-width, initial-scale=1`,
-        description: `The portfolio of Paige Vogenthaler`,
-        subject: `The portfolio of Paige Vogenthaler`,
-        abstract: `The portfolio of Paige Vogenthaler`,
-        topic: `The portfolio of Paige Vogenthaler`,
-        keywords: `Software Engineer`,
-        robots: `index,follow`,
-        googlebot: `index,follow`,
-        distribution: `web`,
-        HandheldFriendly: `true`
+        title: "Paige Vogenthaler",
+        titleTemplate: "%s · Software Engineer",
+        description: "The blog and portfolio of Paige Vogenthaler.",
+        url: "https://www.paigevogenthaler.com",
+        image: "/images/snape.jpg" // Path to your image you placed in the 'static' folder
     },
     plugins: [
         `gatsby-plugin-react-helmet`,

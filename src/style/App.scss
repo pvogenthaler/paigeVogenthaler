@@ -3,11 +3,13 @@
 @import './Home';
 @import './About';
 @import './Blog';
+@import './Projects';
 @import './Contact';
 
 @include Base {
     @include Home;
     @include About;
     @include Blog;
+    @include Projects;
     @include Contact;
 }

@@ -1,5 +1,7 @@
-@mixin Contact {
-    .contact {
+@import './_vars';
+
+@mixin Projects {
+    .projects {
         padding: $sizing-MD;
         height: 100%;
         width: 100%;
@@ -7,10 +9,5 @@
         display: flex;
         @include flex-direction(column);
         @include align-items(center);
-
-        ul {
-            list-style: none;
-            display: flex;
-        }
     }
 }
