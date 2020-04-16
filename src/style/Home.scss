@@ -21,11 +21,14 @@ $degEnd:0deg;
 
         h4 {
             font-weight: 500;
-            margin: $sizing-7XL $sizing-3XL;
             padding: $sizing-MD;
             text-align: end;
             border: $sizing-3XS solid $soft-black;
             position: relative;
+            margin: $sizing-7XL 0;
+            @include size-min-tablet {
+                margin: $sizing-7XL $sizing-3XL;
+            }
 
             &::after {
                 content: '';

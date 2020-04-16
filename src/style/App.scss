@@ -3,6 +3,7 @@
 @import './Home';
 @import './About';
 @import './Blog';
+@import './BlogArticle';
 @import './Projects';
 @import './Contact';
 
@@ -10,6 +11,7 @@
     @include Home;
     @include About;
     @include Blog;
+    @include BlogArticle;
     @include Projects;
     @include Contact;
 }

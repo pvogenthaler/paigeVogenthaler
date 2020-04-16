@@ -13,7 +13,7 @@
         display: flex;
         @include flex-direction(column);
         @include align-items(center);
-        padding: 12px;
+        padding: 0 5vw;
 
         img {
             @include img-size;

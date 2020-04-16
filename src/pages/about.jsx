@@ -1,11 +1,11 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import paigeNyc from '../assets/paige-nyc.jpg';
+import paige from '../assets/paige.png';
 
 const About = () => (
     <Layout>
         <div className='about'>
-            <img src={paigeNyc} alt="Paige Vogenthaler in NYC"></img>
+            <img src={paige} alt="Paige Vogenthaler in NYC"></img>
             <p>
                 I am an engineering leader responsible for managing a UI team focused
                 on delivering A/B tests and new front end features. I also founded

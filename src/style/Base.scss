@@ -5,7 +5,6 @@
 
 @mixin Base {
     * {
-        margin: 0;
         box-sizing: border-box;
     }
     html, body, #___gatsby, #gatsby-focus-wrapper {
@@ -17,19 +16,19 @@
     }
     @include Diagonals;
     #root {
-        height: 100%;
+        min-height: 100%;
         width: 100%;
         display: flex;
-        position: relative;
         @include justify-content(space-between);
+        @include flex-direction(column);
         font-family: Helvetica Neue,"nimbus-sans",Helvetica,Arial,sans-serif;
-        @include size-min-tablet {
-            width: 60%;
-            margin: auto;
-        }
         @include Nav;
 
         .main {
+            height: 100%;
+            min-height: 100%;
+            width: 60vw;
+            margin: auto;
             display: flex;
             flex-grow: 1;
             @include justify-content(center);

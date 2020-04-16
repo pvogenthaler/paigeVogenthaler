@@ -3,11 +3,10 @@
 @mixin Blog {
     .blog {
         padding: $sizing-MD;
-        height: 100%;
-        width: 100%;
         display: flex;
-        padding-top: 100%;
         @include flex-direction(column);
+        @include justify-content(center);
+        @include align-items(center);
 
         a {
             text-decoration: none;

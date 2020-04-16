@@ -1,12 +1,10 @@
 @mixin Contact {
     .contact {
         padding: $sizing-MD;
-        height: 100%;
-        width: 100%;
-        padding-top: 100%;
         display: flex;
         @include flex-direction(column);
         @include align-items(center);
+        @include justify-content(center);
 
         ul {
             list-style: none;
